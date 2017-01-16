@@ -1,0 +1,28 @@
+.about-title {
+  margin: 0;
+}
+
+.about-title {
+  color: white;
+  letter-spacing: 0.3em;
+  text-align: center;
+  padding-top: 3%;
+}
+
+.about-photo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 20%;
+}
+
+.about-text {
+  font-size: 1.4em;
+  color: white;
+  letter-spacing: 0.3em;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+}

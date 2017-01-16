@@ -1,0 +1,31 @@
+.portfolio-image {
+  height: 75vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left-arrow, .right-arrow {
+  font-size: 4em;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transition: opacity .4s;
+  -moz-transition: opacity .4s;
+  -o-transition: opacity .4s;
+  transition: opacity .4s;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+  opacity: 0.6;
+}
+
+.left-arrow {
+  padding-left: 40%;
+  padding-right: 10%;
+}
+
+.arrows {
+  padding-top: 1%;
+  padding-bottom: 2%;
+  width: 50%;
+  margin: 0 auto;
+}

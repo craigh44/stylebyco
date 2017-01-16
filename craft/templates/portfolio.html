@@ -1,0 +1,41 @@
+{% extends "_layout" %}
+
+{% block content %}
+	<div class="w3-content w3-display-container">
+
+<h1>Coming soon!</h1>
+
+	<div class='arrows'>
+  	<a class="left-arrow" onclick="plusDivs(-1)">&#10094;</a>
+  	<a class="right-arrow" onclick="plusDivs(1)">&#10095;</a>
+	</div>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var slideElements = document.getElementsByClassName("mySlides");
+
+  if (n > slideElements.length) {
+		slideIndex = 1
+	}
+
+  if (n < 1) {
+		slideIndex = slideElements.length
+	}
+
+  for (var i = 0; i < slideElements.length; i++) {
+     slideElements[i].style.display = "none";
+  }
+
+  slideElements[slideIndex-1].style.display = "block";
+}
+</script>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "_layout" %}
+
+{% block content %}
+<div class="cover bg-left bg-center-l" style="background-image: url({{ siteUrl ~ 'public/assets/images/hero.png' }})">
+	<div class="bg-black-80">
+
+		<div class='contact-intro'>
+			<h1>Get in touch</h1>
+			<h3>E-mail: <a href="mailto:stylebyco@hotmail.com" target="_top">stylebyco@hotmail.com</a></h3>
+			<h3>Telephone: <a href="tel:07947276926">07947276926</a></h3>
+			<h3>Fill in the contact form below.</h3>
+		</div>
+
+		{% macro errorList(errors) %}
+	    {% if errors %}
+	        <ul class="errors">
+	            {% for error in errors %}
+	                <li>{{ error }}</li>
+	            {% endfor %}
+	        </ul>
+	    {% endif %}
+	{% endmacro %}
+
+	{% from _self import errorList %}
+
+	<form class='pa4 black-80 contact-form' method="post" action="" accept-charset="UTF-8">
+	    {{ getCsrfInput() }}
+	    <input type="hidden" name="action" value="contactForm/sendMessage">
+	    <input type="hidden" name="redirect" value="contact">
+
+	    <h3><label class="f6 b db mb2" for="fromName">Name</label></h3>
+	    <input class="input-reset ba b--black-20 pa2 mb2 db w-25 form-input" id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
+	    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+
+	    <h3><label class="f6 b db mb2" for="fromEmail">Email</label></h3>
+	    <input class="input-reset ba b--black-20 pa2 mb2 db w-25 form-input" id="fromEmail" type="email" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
+	    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+
+	    <h3><label class="f6 b db mb2" for="subject">Subject</label></h3>
+	    <input class="input-reset ba b--black-20 pa2 mb2 db w-25 form-input" id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+	    {{ message is defined and message ? errorList(message.getErrors('subject')) }}
+
+	    <h3><label class="f6 b db mb2" for="message">Message</label></h3>
+	    <textarea class="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2 form-input" rows="10" cols="40" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+	    {{ message is defined and message ? errorList(message.getErrors('message')) }}
+
+	    <input class="send-button f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4" type="submit" value="Send">
+	</form>
+</div>
+</div>
+{% endblock %}
