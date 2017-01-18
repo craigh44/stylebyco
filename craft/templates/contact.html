@@ -1,7 +1,7 @@
 {% extends "_layout" %}
 
 {% block content %}
-<div class="cover bg-left bg-center-l" style="background-image: url({{ siteUrl ~ 'public/assets/images/hero.png' }})">
+<div class="cover bg-left bg-center-l" style="background-image: url({{ contactBackground.backgroundImage.first.getUrl() }})">
 	<div class="bg-black-80">
 
 		<div class='contact-intro'>
@@ -23,28 +23,28 @@
 
 	{% from _self import errorList %}
 
-	<form class='pa4 black-80 contact-form' method="post" action="" accept-charset="UTF-8">
+	<form class='pa4 black-80 contact-form tc' method="post" action="" accept-charset="UTF-8">
 	    {{ getCsrfInput() }}
 	    <input type="hidden" name="action" value="contactForm/sendMessage">
-	    <input type="hidden" name="redirect" value="contact">
+	    <input type="hidden" name="redirect" value="{{url('thanks')}}">
 
 	    <h3><label class="f6 b db mb2" for="fromName">Name</label></h3>
-	    <input class="input-reset ba b--black-20 pa2 mb2 db w-25 form-input" id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
+	    <input class="input-reset ba b--black-20 pa2 mb2 w-25-l form-input" id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
 	    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
 
 	    <h3><label class="f6 b db mb2" for="fromEmail">Email</label></h3>
-	    <input class="input-reset ba b--black-20 pa2 mb2 db w-25 form-input" id="fromEmail" type="email" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
+	    <input class="input-reset ba b--black-20 pa2 mb2 w-25-l form-input" id="fromEmail" type="email" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
 	    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 
 	    <h3><label class="f6 b db mb2" for="subject">Subject</label></h3>
-	    <input class="input-reset ba b--black-20 pa2 mb2 db w-25 form-input" id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+	    <input class="input-reset ba b--black-20 pa2 mb2 w-25-l form-input" id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
 	    {{ message is defined and message ? errorList(message.getErrors('subject')) }}
 
-	    <h3><label class="f6 b db mb2" for="message">Message</label></h3>
-	    <textarea class="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2 form-input" rows="10" cols="40" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+	    <h3><label class="f6 b mb2" for="message">Message</label></h3>
+	    <textarea class="border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2 form-input" rows="10" cols="40" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
 	    {{ message is defined and message ? errorList(message.getErrors('message')) }}
 
-	    <input class="send-button f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4" type="submit" value="Send">
+	    <input class="db center send-button f5 no-underline black bg-animate hover-bg-black hover-white items-center pa3 ba border-box mr4" type="submit" value="Send">
 	</form>
 </div>
 </div>

@@ -3,7 +3,13 @@
 {% block content %}
 	<div class="w3-content w3-display-container">
 
-<h1>Coming soon!</h1>
+{% for entry in craft.entries.section('gallery') %}
+	<article>
+
+		<img class='mySlides portfolio-image' src="{{ entry.galleryImage.first().getUrl() }}">
+
+	</article>
+{% endfor %}
 
 	<div class='arrows'>
   	<a class="left-arrow" onclick="plusDivs(-1)">&#10094;</a>
@@ -12,6 +18,16 @@
 </div>
 
 <script>
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 37) {
+			plusDivs(-1);
+    }
+    else if(event.keyCode == 39) {
+      plusDivs(1);
+    }
+});
+
 var slideIndex = 1;
 showDivs(slideIndex);
 

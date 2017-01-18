@@ -26,10 +26,10 @@ return array(
     )
   ),
   '.com' => array(
-    'siteUrl' => 'http://www.stylebyco.com/',
+    'siteUrl' => 'http://stylebyco.com/',
     'devMode' => false,
     'enviromentVariables' => array(
-      'baseUrl' => 'http://www.stylebyco.com/'
+      'baseUrl' => 'http://stylebyco.com/'
     )
   ),
 );

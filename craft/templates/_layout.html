@@ -10,23 +10,26 @@
     <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
     <link rel="home" href="{{ siteUrl }}" />
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css" />
+
+    
+    <meta property="og:url" content="http://www.stylebyco.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Caitriona Oladapo | Stylist" />
+    <meta property="og:description" content="Freelance Stylist" />
+    <meta property="og:image" content="{{  siteUrl ~ 'public/assets/images/hero.png' }}" />
+
     {% includeCssFile siteUrl ~ "public/assets/css/home.css" %}
     {% includeCssFile siteUrl ~ "public/assets/css/contact.css" %}
     {% includeCssFile siteUrl ~ "public/assets/css/portfolio.css" %}
     {% includeCssFile siteUrl ~ "public/assets/css/about.css" %}
 </head>
 
-<body style="background-color: rgba(0,0,0,.8)" class="sans-serif">
+<body style="min-height: 100vh; background-color: rgba(0,0,0,.8)" class="flex flex-column sans-serif">
 
-    <div id="container">
         {% if craft.request.firstSegment != '' %}
         <nav class="dt w-100 mw8 center sans-serif">
-            <!-- <div class="dtc w2 v-mid pa3">
-                <a href="{{ siteUrl }}" class="dib w2 h2 pa1 ba b--white-90 grow-large border-box">
-                </a>
-            </div> -->
             <a href="{{ siteUrl }}"><div class='nav-logo' style="background-image: url({{ siteUrl ~ 'public/assets/images/logo.png' }});"></div></a>
-            <div class="dtc v-mid tr pa3">
+            <div class="dtc v-mid tr pa3 nav-links">
                 <a class="f6 fw4 hover-white no-underline white-70 dib-ns pv2 ph3" href="{{ url('portfolio') }}">Portfolio</a>
                 <a class="f6 fw4 hover-white no-underline white-70 dib-ns pv2 ph3" href="{{ url('about') }}">About</a>
                 <a class="f6 fw4 hover-white no-underline white-70 dib-ns pv2 ph3" href="{{ url('contact') }}">Contact</a>
@@ -34,14 +37,14 @@
         </nav>
         {% endif %}
 
-        <main id="content" role="main">
+        <main id="content" class="flex-auto" role="main">
             {% block content %}
             <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
             <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
             {% endblock %}
         </main>
 
-        <footer style="bottom: 0;" class="tc bg-center cover bg-black w-100">
+        <footer class="tc bg-center cover bg-black w-100">
             <div class="w-100 ph3 pv2 bg-black-80">
                 <a class="link white-60 bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2" href="https://www.facebook.com" target='_blank' title="Facebook">
                     <svg class="dib h2 w2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.476-1.195 1.176v1.54h2.39l-.31 2.416h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg>
@@ -61,8 +64,6 @@
                 </a>
             </div>
         </footer>
-
-    </div>
 </body>
 
 </html>

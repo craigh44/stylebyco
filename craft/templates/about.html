@@ -1,14 +1,14 @@
 {% extends "_layout" %}
 
 {% block content %}
-<div class="cover bg-left bg-center-l" style="background-image: url({{ siteUrl ~ 'public/assets/images/hero.png' }})">
+<div class="cover bg-left bg-center-l" style="background-image: url({{ aboutBackground.backgroundImage.first.getUrl() }})">
 	<div class="bg-black-80">
 
 		<h2 class='about-title'>Hey, I'm Katie</h1>
 
 		<img class='about-photo' src="{{ siteUrl ~ 'public/assets/images/katie.png' }}"/>
 
-		<p class='about-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pharetra dui quis nisi sollicitudin, ac imperdiet nibh consequat. Aliquam erat volutpat. Donec lacus ipsum, consectetur et nibh vel, bibendum tristique magna. Integer tempus justo vitae urna condimentum, a ullamcorper lorem imperdiet. Etiam feugiat nunc gravida hendrerit dignissim. Sed semper mauris lectus. Etiam consectetur sodales enim, vitae vehicula elit finibus in.</p>
+		<p class='about-text tc'>{{aboutText.aboutText}}</p>
 
 	</div>
 </div>

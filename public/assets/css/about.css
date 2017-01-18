@@ -19,10 +19,23 @@
 }
 
 .about-text {
-  font-size: 1.4em;
+  font-size: 1em;
   color: white;
   letter-spacing: 0.3em;
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 5%;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .about-photo {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about-photo {
+    width: 50%;
+  }
 }

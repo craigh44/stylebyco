@@ -79,3 +79,27 @@ footer {
     display: none;
   }
 }
+
+@media screen and (max-width: 485px) {
+  .home-logo {
+    display: none;
+  }
+
+  .tagline {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+
+  .portfolio-button {
+    margin-bottom: 3rem;
+  }
+
+  .nav-logo {
+    width: 145px;
+  }
+
+  .nav-links {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
