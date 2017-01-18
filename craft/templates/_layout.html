@@ -29,6 +29,8 @@
     <meta name="msapplication-TileImage" content="{{  siteUrl ~ 'public/assets/images/favicons/ms-icon-144x144.png'}}">
     <meta name="theme-color" content="#ffffff">
 
+    <meta name="description" content="Caitriona Oladapo - Freelance Stylist based in Newcastle Upon Tyne with a wide range of portfolio pieces, please feel free to contact me">
+
     <meta property="og:url" content="http://www.stylebyco.com" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Caitriona Oladapo | Stylist" />
@@ -41,8 +43,8 @@
     {% includeCssFile siteUrl ~ "public/assets/css/about.css" %}
 </head>
 
-<body style="min-height: 100vh; background-color: rgba(0,0,0,.8)" class="flex flex-column sans-serif">
-  
+<body class="main-body flex flex-column sans-serif">
+
         {% if craft.request.firstSegment != '' %}
         <nav class="dt w-100 mw8 center sans-serif">
             <a href="{{ siteUrl }}"><div class='nav-logo' style="background-image: url({{ siteUrl ~ 'public/assets/images/logo.png' }});"></div></a>
