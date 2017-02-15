@@ -1,0 +1,16 @@
+{% extends "_layout" %}
+{% set title = "Blog" %}
+
+{% block content %}
+
+<div class='blog-list-wrapper'>
+  <h1 class='blog-page-title'>Blog</h1>
+  {% for entry in craft.entries.section('blog').find() %}
+    <article class='blog-list-entry'>
+      <h2 class='fw1 blog-list-title'><a class='blog-list-title-link white-70' href="{{ entry.url }}">{{ entry.title }}</a></h2>
+      <p class='blog-list-excerpt'>{{ entry.blogPost|striptags|slice(0,250)|default('Read more') }}...</p>
+      <a class='read-more-button' href="{{ entry.url }}">Read more...</a>
+    </article>
+  {% endfor %}
+</div>
+{% endblock %}

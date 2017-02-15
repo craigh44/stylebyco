@@ -1,0 +1,48 @@
+.blog-list-wrapper {
+  background-color: #787D87;
+  padding-top: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 5%;
+}
+
+.blog-page-title {
+  text-align: center;
+}
+
+.blog-list-title {
+  text-align: center;
+}
+
+.blog-list-excerpt {
+  letter-spacing: 0.1em;
+}
+
+.blog-list-title-link {
+  letter-spacing: 0.3em;
+  text-decoration: none;
+  transition: color 1s;
+}
+
+.blog-list-title-link:hover {
+  color: #262626;
+}
+
+.read-more-button:hover {
+  color: #262626;
+}
+
+.read-more-button {
+  color: #CCCCCC;
+  text-decoration: none;
+  transition: color 1s;
+}
+
+.read-more-button:hover {
+  color: #262626;
+}
+
+.blog-list-entry {
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+}

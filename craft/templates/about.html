@@ -1,15 +1,34 @@
 {% extends "_layout" %}
 
 {% block content %}
-<div class="cover bg-left bg-center-l" style="background-image: url({{ aboutBackground.backgroundImage.first.getUrl() }})">
+<div class="cover bg-left bg-center-l" style="background-image: url({{ aboutBackground.backgroundImage.first.getUrl() }}); background-attachment: fixed;">
 	<div class="bg-black-80">
 
-		<h2 class='about-title'>Hey, I'm Katie</h1>
+		<img class='about-photo' src="{{ siteUrl ~ 'public/assets/images/image1.jpg' }}"/>
 
-		<img class='about-photo' src="{{ siteUrl ~ 'public/assets/images/katie.png' }}"/>
+		<div class='about-text tc'>{{aboutText.aboutText}}</div>
 
-		<p class='about-text tc'>{{aboutText.aboutText}}</p>
+		<div class='publications-clients fw1'>
 
-	</div>
+			<div class='publications-clients-section dib w-100-m pa2'>
+				<h1 class='tc'>Publications</h1>
+					<ul>
+						{% for entry in craft.entries.section('publications').order('title asc') %}
+							<li>{{ entry.title }}</li>
+						{% endfor %}
+					</ul>
+			</div>
+
+			<div class='publications-clients-section dib w-100-m pa2'>
+				<h1 class='tc'>Clients</h1>
+					<ul>
+						{% for entry in craft.entries.section('clients').order('title asc') %}
+							<li>{{ entry.title }}</li>
+						{% endfor %}
+					</ul>
+			</div>
+
+			</div>
+	 </div>
 </div>
 {% endblock %}

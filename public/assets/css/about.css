@@ -10,12 +10,12 @@
 }
 
 .about-photo {
+  padding-top: 3%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5%;
   margin-bottom: 5%;
-  width: 20%;
+  width: 30%;
 }
 
 .about-text {
@@ -28,6 +28,10 @@
   margin-bottom: 0;
 }
 
+.publications-clients-section {
+  width: 48%;
+}
+
 @media screen and (max-width: 700px) {
   .about-photo {
     width: 35%;
@@ -37,5 +41,11 @@
 @media screen and (max-width: 500px) {
   .about-photo {
     width: 50%;
+  }
+}
+
+@media screen and (max-width: 60em) and (min-width: 30em) {
+  .w-100-m {
+      width: 100%;
   }
 }

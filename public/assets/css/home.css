@@ -1,6 +1,6 @@
 .main-body {
   min-height: 100vh;
-  background-color: rgba(0,0,0,.8);  
+  background-color: rgba(0,0,0,.8);
 }
 
 .hero {
@@ -51,7 +51,7 @@ footer {
   clear: both;
 }
 
-.tagline {
+.tagline, .taline-2 {
   letter-spacing: 0.3em;
 }
 
@@ -92,7 +92,11 @@ footer {
 
   .tagline {
     margin-top: 6rem;
-    margin-bottom: 6rem;
+
+  }
+
+  .tagline-2 {
+    margin-bottom: 4rem;
   }
 
   .portfolio-button {

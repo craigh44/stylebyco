@@ -41,13 +41,16 @@
     {% includeCssFile siteUrl ~ "public/assets/css/contact.css" %}
     {% includeCssFile siteUrl ~ "public/assets/css/portfolio.css" %}
     {% includeCssFile siteUrl ~ "public/assets/css/about.css" %}
+    {% includeCssFile siteUrl ~ "public/assets/css/blog-entry.css" %}
+    {% includeCssFile siteUrl ~ "public/assets/css/blog-list.css" %}
+
 </head>
 
 <body class="main-body flex flex-column sans-serif">
 
         {% if craft.request.firstSegment != '' %}
-        <nav class="dt w-100 mw8 center sans-serif">
-            <a href="{{ siteUrl }}"><div class='nav-logo' style="background-image: url({{ siteUrl ~ 'public/assets/images/logo.png' }});"></div></a>
+        <nav class="dt w-100 mw8 center">
+              <a href="{{ siteUrl }}"><div class='nav-logo' style="background-image: url({{ siteUrl ~ 'public/assets/images/logo.png' }});"></div></a>
             <div class="dtc v-mid tr pa3 nav-links">
                 <a class="f6 fw4 hover-white no-underline white-70 dib-ns pv2 ph3" href="{{ url('portfolio') }}">Portfolio</a>
                 <a class="f6 fw4 hover-white no-underline white-70 dib-ns pv2 ph3" href="{{ url('about') }}">About</a>

@@ -1,0 +1,12 @@
+{% extends "_layout" %}
+{% set title = entry.title %}
+
+{% block content %}
+    <article class='blog-wrapper tc'>
+      <h1 class='blog-title fw1'>{{ entry.title }}</h1>
+      <h3 class='blog-author'><span class='fw1'>by</span> StyleByCo</h3>
+      <img class='avatar-icon' src='{{ siteUrl ~ "public/assets/images/avatar.png" }}'></img>
+      <h4 class='fw1 blog-date'>{{ entry.postDate|date('M d, Y') }}</h4>
+      <div class='blog-text'>{{ entry.blogPost }}</div>
+    </article>
+{% endblock %}
