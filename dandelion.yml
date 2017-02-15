@@ -2,7 +2,7 @@ adapter: ftp
 host: 109.73.168.209
 username: stylebyco
 password: ~OdKRdH1qCoF
-path: public_html/x
+path: public_html
 
 exclude:
     - .gitignore
