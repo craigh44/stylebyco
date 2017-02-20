@@ -43,7 +43,8 @@
     {% includeCssFile siteUrl ~ "public/assets/css/about.css" %}
     {% includeCssFile siteUrl ~ "public/assets/css/blog-entry.css" %}
     {% includeCssFile siteUrl ~ "public/assets/css/blog-list.css" %}
-
+    {% includeCssFile siteUrl ~ "public/assets/css/gallery.css" %}
+    {% includeCssFile siteUrl ~ "public/assets/css/lightbox.css" %}
 </head>
 
 <body class="main-body flex flex-column sans-serif">
@@ -86,6 +87,8 @@
                 </a>
             </div>
         </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    {% includeJsFile siteUrl ~ "public/assets/js/lightbox.js" %}
 </body>
 
 <script>
