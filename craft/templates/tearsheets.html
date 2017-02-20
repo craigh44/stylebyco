@@ -1,57 +1,15 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<div class="w3-content w3-display-container">
 
-{% for entry in craft.entries.section('tearsheets') %}
-	<article>
+<div class='gallery-wrapper'>
 
-		<img class='mySlides portfolio-image' src="{{ entry.galleryImage.first().getUrl() }}">
+	{% for entry in craft.entries.section('tearsheets') %}
+			<a class='lightbox-trigger thumbnail' href="{{ entry.galleryImage.first().getUrl() }}" data-lightbox="tearsheets">
+				<img class='portrait' src='{{ entry.galleryImage.first().getUrl() }}'>
+			</a>
+	{% endfor %}
 
-	</article>
-{% endfor %}
-
-	<div class='arrows'>
-  	<a class="left-arrow" onclick="plusDivs(-1)" style="background-image: url({{ siteUrl ~ 'public/assets/images/leftarrow.png' }})"></a>
-  	<a class="right-arrow" onclick="plusDivs(1)" style="background-image: url({{ siteUrl ~ 'public/assets/images/rightarrow.png' }})"></a>
-	</div>
 </div>
-
-<script>
-
-document.addEventListener('keydown', function(event) {
-    if(event.keyCode == 37) {
-			plusDivs(-1);
-    }
-    else if(event.keyCode == 39) {
-      plusDivs(1);
-    }
-});
-
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var slideElements = document.getElementsByClassName("mySlides");
-
-  if (n > slideElements.length) {
-		slideIndex = 1
-	}
-
-  if (n < 1) {
-		slideIndex = slideElements.length
-	}
-
-  for (var i = 0; i < slideElements.length; i++) {
-     slideElements[i].style.display = "none";
-  }
-
-  slideElements[slideIndex-1].style.display = "block";
-}
-</script>
 
 {% endblock %}
