@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class='blog-list-wrapper'>
-  <h1 class='blog-page-title'>Blog</h1>
+  <h1 class='blog-page-title fw1 f3 white-80 mt3 tagline'>StyleByCo <span style='color: black; font-weight: 400;'>Blog</h1>
   {% for entry in craft.entries.section('blog').find() %}
     <article class='blog-list-entry'>
       <h2 class='fw1 blog-list-title'><a class='blog-list-title-link white-70' href="{{ entry.url }}">{{ entry.title }}</a></h2>
