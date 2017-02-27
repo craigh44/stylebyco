@@ -4,11 +4,16 @@
 
 <div class='gallery-wrapper'>
 
-	{% for entry in craft.entries.section('tearsheets') %}
-			<a class='lightbox-trigger thumbnail' href="{{ entry.galleryImage.first().getUrl() }}" data-lightbox="tearsheets">
-				<img class='portrait' src='{{ entry.galleryImage.first().getUrl() }}'>
-			</a>
-	{% endfor %}
+	{% set categories = craft.categories.group('tearsheetsCategory').find() %}
+
+				{% for category in categories %}
+						{% for entry in craft.entries.section('gallery').relatedTo(category).find() %}
+							 <a class='lightbox-trigger thumbnail' href="{{ entry.galleryImage.first().getUrl() }}" data-lightbox="gallery">
+								 <img class='portrait' src='{{ entry.galleryImage.first().getUrl() }}'>
+							 </a>
+						{% endfor %}
+
+		{% endfor %}
 
 </div>
 
