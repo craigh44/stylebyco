@@ -4,7 +4,7 @@
 
 <div class='gallery-wrapper'>
 
-	{% set categories = craft.categories.group('tearsheetsCategory').find() %}
+	{% set categories = craft.categories.group('tearsheetCategory').find() %}
 
 				{% for category in categories %}
 						{% for entry in craft.entries.section('tearsheets').relatedTo(category).find() %}
