@@ -3,13 +3,13 @@
 {% block content %}
 
 <div class='fl w-25 portfolio-image-parent'>
-	<div class='portfolio-image-child' style="background-image: url({{ siteUrl ~ 'public/assets/images/gallery.png' }})">
+	<div class='portfolio-image-child' style="background-image: url({{ galleryCover.image.first.getUrl() }})">
 		<a href="{{ url('gallery') }}" class='portfolio-title'>Gallery</a>
 	</div>
 </div>
 
 <div class='fl w-25 portfolio-image-parent'>
-	<div class='portfolio-image-child' style="background-image: url({{ siteUrl ~ 'public/assets/images/tearsheets.png' }})">
+	<div class='portfolio-image-child' style="background-image: url({{ tearsheetsCover.image.first.getUrl() }})">
 		<a href="{{ url('tearsheets') }}" class='portfolio-title'>Tearsheets</a>
 	</div>
 </div>
